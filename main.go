@@ -11,7 +11,7 @@ func main() {
 
 	db := make(model.DB)
 
-	bot, err := tgbotapi.NewBotAPI("КАКОЙ-То ТОКЕН")
+	bot, err := tgbotapi.NewBotAPI("КАКОЙ-ТО ТОКЕН")
 	if err != nil {
 		log.Panic(err)
 	}
