@@ -46,9 +46,9 @@ func (w *Wallet) Processing(message Message) string {
 		builder.WriteString("Баланс:\n")
 
 		totalUSD := .0
-		priceRUB := getPrice(CrCurrency("USDT"), CrCurrency("RUB"))
+		priceRUB := getPrice("USDT", "RUB")
 		for key, sum := range *w {
-			priceUSD := getPrice(key, CrCurrency("USDT"))
+			priceUSD := getPrice(key, "USDT")
 			sumUSD := sum * priceUSD
 			sumRUB := sumUSD * priceRUB
 			builder.WriteString(fmt.Sprintf("%s: %f (%.2f$ %.2f₽)\n", key, sum, sumUSD, sumRUB))
